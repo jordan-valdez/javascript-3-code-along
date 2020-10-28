@@ -27,7 +27,7 @@ Inside this loop, change the value of each property to 0
 
 function objectLooper(number) {
     for (let key in number) {
-        // Code here
+        number[key] = 0// Code here
     }
     return number;
 };
@@ -51,7 +51,8 @@ If a value is greater than 3,000,000 set it to 0
 
 function stateLooper(obj) {
 	for (let key in obj) {
-		// Code here
+		if (obj[key] > 3000000) obj[key] = 0
+// Code here
 	}
 	return obj;
 };
@@ -66,7 +67,9 @@ Once all falsy values and their properties are removed, return the object
 */
 
 function cleanUser(obj) {
-    // Code here
+    for( let key in obj){
+        if(!obj[key]) delete obj[key]
+    }return obj// Code here
 };
 
 
@@ -77,7 +80,12 @@ Create a function called maxedOut that takes a user object and loops over that o
 Return the updated user object
 */
 
-// Code here
+let maxedOut = () => {
+    for(let key in user){
+        user[key] = `max`
+    }
+    return user
+}// Code here
 
 
 
@@ -305,7 +313,9 @@ The function should return the product of the two parameters
 You should not use the ES5 function declaration or function expression syntax in your final solution
 */
 
-// Code here
+let multiply = (num1, num2) => {
+    return num1 * num2
+}// Code here
 
 
 
@@ -318,7 +328,9 @@ The function should return a single concatenated (joined) str of str1 and str2
 You should not use the ES5 function declaration or function expression syntax in your final solution
 */
 
-// Code here
+let concatenate = (str1, str2) => {
+    return str1 + str2
+}// Code here
 
 
 
@@ -332,7 +344,13 @@ The values of each property should correspond to its respective parameter
 You should not use the ES5 function declaration or function expression syntax in your final solution
 */
 
-// Code here
+let gemInfo = (gemType, gemSize, gemWeight) => {
+    return{
+        gemType: gemType,
+        gemSize: gemSize,
+        gemWeight: gemWeight
+    }
+}// Code here
 
 
 
@@ -358,7 +376,15 @@ let jobs = [
 // Do not edit the code above.
 
 
-// Code here
+let identifier = () => {
+    let filteredArray = jobs.filter(function(element, index, array){
+        if(element.programmer) {
+            return element
+        }
+    })
+    
+    return filteredArray[0]
+}// Code here
 
 
 
